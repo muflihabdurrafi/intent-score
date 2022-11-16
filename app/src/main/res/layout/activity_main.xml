@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_drawable"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Half Live Score"
+        android:text="Tugas 5 H1D020033"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +26,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:inputType="textPersonName"
-        android:text="Home Team"
+        android:hint="Home Team"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -38,7 +39,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:inputType="textPersonName"
-        android:text="Away Team"
+        android:hint="Away Team"
         app:layout_constraintBottom_toTopOf="@+id/btn_team"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
