@@ -15,7 +15,7 @@ public class MatchActivity extends AppCompatActivity {
     TextView homeTxt, awayTxt, homeScore, awayScore;
     ImageView homeLogo, awayLogo;
     Button result, reset, add_home_satu, add_home_dua, add_home_tiga, add_away_satu, add_away_dua, add_away_tiga;
-    int skor;
+    String s_homeScore, s_awayScore, s_namaHome,s_namaAway;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MatchActivity extends AppCompatActivity {
         //3.Tombol Cek Result menghitung pemenang dari kedua tim dan mengirim nama pemenang ke ResultActivity, jika seri di kirim text "Draw"
 
         String home = getIntent().getExtras().getString("key_home");
-        final String away = getIntent().getExtras().getString("key_away");
+        String away = getIntent().getExtras().getString("key_away");
         Uri bitmapHome = Uri.parse(getIntent().getExtras().getString("key_imagehome"));
         Uri bitmapAway = Uri.parse(getIntent().getExtras().getString("key_imageaway"));
 
@@ -122,7 +122,15 @@ public class MatchActivity extends AppCompatActivity {
         result.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                s_homeScore = homeScore.getText().toString();
+                s_awayScore = awayScore.getText().toString();
+                s_namaHome = homeTxt.getText().toString();
+                s_namaAway = awayTxt.getText().toString();
                 Intent intent = new Intent(MatchActivity.this, ResultActivity.class);
+                intent.putExtra("key_score_home",s_homeScore);
+                intent.putExtra("key_score_away",s_awayScore);
+                intent.putExtra("key_homeTxt", s_namaHome);
+                intent.putExtra("key_awayTxt", s_namaAway);
 
                 startActivity(intent);
             }
